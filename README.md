@@ -2,9 +2,7 @@
 
 Autocomplete to Google Places.
 
-## install
-
-`npm install --save ionic2-google-places-autocomplete`
+# IN DEVELOPMENT
 
 ## Usage
 

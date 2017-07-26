@@ -1,6 +1,6 @@
 {
   "name": "ionic2-google-places-autocomplete",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Ionic 2 Google Places autocomplete for Ionic 2",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",

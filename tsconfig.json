@@ -6,6 +6,7 @@
     "sourceMap": true,
     "declaration": true,
     "noImplicitAny": false,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["dom", "es2015"],
     "outDir": "./dist",

@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
+
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/map';
 
@@ -33,7 +34,7 @@ export class GooglePlacesAutocompleteComponent {
 
   locals: any[];
 
-  constructor(public http: Http) {
+  constructor(@Inject(Http) public http: Http) {
     if (this.placeholder == null) {
       this.placeholder = "Search";
     }
