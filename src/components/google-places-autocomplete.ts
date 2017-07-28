@@ -18,6 +18,8 @@ export class GooglePlacesAutocompleteComponent {
 
   @Input("types") types : string;
 
+  @Input("type") type : string;
+
   @Input("key") key : string;
 
   @Input("offset") offset : string;
@@ -41,14 +43,15 @@ export class GooglePlacesAutocompleteComponent {
   }
 
   public autocomplete(input: string): Observable<any> {
-    let typesParam: string = this.types != null ? ("&types = " + this.types) : "";
-    let offsetParam: string = this.offset != null ? ("&offset = " + this.offset) : "";
-    let locationParam: string = this.location != null ? ("&location = " + this.location) : "";
-    let radiusParam: string = this.radius != null ? ("&radius = " + this.radius) : "";
-    let languageParam: string = this.language != null ? ("&language = " + this.language) : "";
-    let componentsParam: string = this.components != null ? ("&components = " + this.components) : "";
-    let strictboundsParam: string = this.strictbounds != null ? ("&strictbounds = " + this.strictbounds) : "";
-    let params = typesParam + offsetParam + locationParam + radiusParam + languageParam + componentsParam + strictboundsParam;
+    let typesParam: string = this.types != null ? ("&types=" + this.types) : "";
+    let typeParam: string = this.type != null ? ("&type=" + this.type) : "";
+    let offsetParam: string = this.offset != null ? ("&offset=" + this.offset) : "";
+    let locationParam: string = this.location != null ? ("&location=" + this.location) : "";
+    let radiusParam: string = this.radius != null ? ("&radius=" + this.radius) : "";
+    let languageParam: string = this.language != null ? ("&language=" + this.language) : "";
+    let componentsParam: string = this.components != null ? ("&components=" + this.components) : "";
+    let strictboundsParam: string = this.strictbounds != null ? ("&strictbounds=" + this.strictbounds) : "";
+    let params = typesParam + typeParam + offsetParam + locationParam + radiusParam + languageParam + componentsParam + strictboundsParam;
 
     return this.http.get(GOOGLE_API_URL + "autocomplete/json?input="+input+"&key="+this.key+params)
     .map(res => res.json());

@@ -1,8 +1,10 @@
-# Ionic 2+ Google Places Autocomplete
+# Ionic 2.2+ Google Places Autocomplete
 
-Autocomplete to Google Places.
+Ionic 2.2+ Google Places Autocomplete.
 
-# IN DEVELOPMENT
+## Install
+
+ `npm install --save ionic2-google-places-autocomplete`
 
 ## Usage
 
@@ -36,3 +38,5 @@ export class AppModule {}
 ```html
 <google-place-autocomplete (callback)="detail($event[0])" key="GOOGLE_PLACES_API_KEY"></google-place-autocomplete>
 ```
+
+All list of parameters and result can be viewed in: https://developers.google.com/places/web-service/autocomplete
