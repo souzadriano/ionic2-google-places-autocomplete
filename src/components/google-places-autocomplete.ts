@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 const GOOGLE_API_URL = "https://maps.googleapis.com/maps/api/place/";
@@ -42,7 +42,7 @@ export class GooglePlacesAutocompleteComponent {
     }
   }
 
-  public autocomplete(input: string): Observable<any> {
+  public autocomplete(input: string) {
     let typesParam: string = this.types != null ? ("&types=" + this.types) : "";
     let typeParam: string = this.type != null ? ("&type=" + this.type) : "";
     let offsetParam: string = this.offset != null ? ("&offset=" + this.offset) : "";
