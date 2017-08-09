@@ -36,7 +36,7 @@ export class AppModule {}
 ```
 
 ```html
-<google-place-autocomplete (callback)="detail($event[0])" key="GOOGLE_PLACES_API_KEY"></google-place-autocomplete>
+<google-places-autocomplete (callback)="detail($event[0])" key="GOOGLE_PLACES_API_KEY"></google-places-autocomplete>
 ```
 
 All list of parameters and result can be viewed in: https://developers.google.com/places/web-service/autocomplete
