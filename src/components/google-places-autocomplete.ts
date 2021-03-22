@@ -34,6 +34,8 @@ export class GooglePlacesAutocompleteComponent {
 
   @Input("strictbounds") strictbounds : string;
 
+  @Input("sessionToken") sessionToken : string;
+
   locals: any[];
 
   constructor(@Inject(Http) public http: Http) {
@@ -51,7 +53,8 @@ export class GooglePlacesAutocompleteComponent {
     let languageParam: string = this.language != null ? ("&language=" + this.language) : "";
     let componentsParam: string = this.components != null ? ("&components=" + this.components) : "";
     let strictboundsParam: string = this.strictbounds != null ? ("&strictbounds=" + this.strictbounds) : "";
-    let params = typesParam + typeParam + offsetParam + locationParam + radiusParam + languageParam + componentsParam + strictboundsParam;
+    let sessiontokenParam = this.sessionToken != null ? ("&sessiontoken=" + this.sessionToken) : "";
+    let params = typesParam + typeParam + offsetParam + locationParam + radiusParam + languageParam + componentsParam + strictboundsParam + sessiontokenParam;
 
     return this.http.get(GOOGLE_API_URL + "autocomplete/json?input="+input+"&key="+this.key+params)
     .map(res => res.json());
